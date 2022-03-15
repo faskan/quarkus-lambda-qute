@@ -12,10 +12,12 @@ public class LambdaHandlerTest {
 
     @Test
     public void testSimpleLambdaSuccess() throws Exception {
+        Person person = new Person();
+        person.setName("test");
         given()
                 .contentType("application/json")
                 .accept("application/json")
-                .body("test")
+                .body(person)
                 .when()
                 .post()
                 .then()
